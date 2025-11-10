@@ -5,11 +5,9 @@
 @layer base {
   :root {
     --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    --font-geist: 'Geist', system-ui, sans-serif;
-    --font-geist-mono: 'Geist Mono', monospace;
-    --font-mona: 'Mona Sans', system-ui, sans-serif;
-    --font-ibm-plex: 'IBM Plex Sans', system-ui, sans-serif;
-    --font-manrope: 'Manrope', system-ui, sans-serif;
+    --aqua: 95,243,255; /* Aqua Glow */
+    --purple: 147,51,234; /* Cyber Purple */
+    --deep: 10,15,30; /* Deep Space Blue */
   }
 
   html {
@@ -19,10 +17,11 @@
 
   body {
     @apply antialiased;
+    background-color: rgb(var(--deep));
   }
 }
 
-/* Custom utility classes for shadcn/ui patterns */
+/* Custom utility classes */
 @layer utilities {
   .animate-in {
     animation-name: animateIn;
@@ -43,4 +42,16 @@
     --tw-exit-translate-x: initial;
     --tw-exit-translate-y: initial;
   }
+
+  /* Aqua Glow utilities to match design spec */
+  .text-aqua { color: rgba(var(--aqua), 1); }
+  .text-aqua\/80 { color: rgba(var(--aqua), 0.8); }
+
+  .bg-aqua\/15 { background-color: rgba(var(--aqua), 0.15); }
+  .bg-aqua\/20 { background-color: rgba(var(--aqua), 0.20); }
+  .bg-aqua\/30 { background-color: rgba(var(--aqua), 0.30); }
+  .bg-aqua\/60 { background-color: rgba(var(--aqua), 0.60); }
+
+  .border-aqua\/30 { border-color: rgba(var(--aqua), 0.30); }
+  .ring-aqua\/40 { --tw-ring-color: rgba(var(--aqua), 0.40); }
 }
